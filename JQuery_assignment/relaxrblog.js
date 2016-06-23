@@ -1,15 +1,10 @@
 $(document).ready(start);
 
-$(document).ready(function()  {
-  $("a").click(function(event){
-    event.preventDefault();
-  });
-});
-
 function start()  {
   $(".readmore").click(doReadMore);
   $(".readless").click(doReadLess);
   $(".learnmore").click(doLearnMore);
+  $("a").click(overrideLinks);
 }
 
 function doReadMore() {
@@ -27,4 +22,8 @@ function doReadLess() {
 function doLearnMore()  {
   $("#learnmoretext").slideDown("slow");
   $(".learnmore").hide();
+}
+
+function overrideLinks(e) {
+  e.preventDefault();
 }
